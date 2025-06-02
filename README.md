@@ -16,17 +16,19 @@ This project implements an actor-critic reinforcement learning agent using PyTor
 
 ## Requirements
 
-- Python 3.7+  
-- PyTorch  
-- OpenAI Gym  
-- NumPy  
-- Matplotlib  
-- tqdm  
-- imageio  
+This project depends on the following Python packages and system libraries:
 
-You can install dependencies using pip:
+- `numpy`
+- `gym` (with Box2D support)
+- `matplotlib`
+- `pyvirtualdisplay`
+- `moviepy`
+- `torch` (PyTorch)
+- `tqdm`
+
+### Python package installation
+
+Use the following command to install all necessary Python packages:
 
 ```bash
-pip install torch gym numpy matplotlib tqdm imageio
-
-
+pip install -r requirements.txt
