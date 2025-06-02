@@ -35,6 +35,11 @@ pip install -r requirements.txt
 ```
 ## Additional Notes for Google Colab Users
 
+**⚠️ Warning:**  
+This repository is designed to be run primarily from **Google Colab**.  
+Running the setup and installation commands on your local machine may cause conflicts or mess up your system, especially due to system-level package installations required for Box2D support.  
+If you wish to run locally, please carefully follow official installation instructions for Gym and its dependencies.
+
 Google Colab runs on virtual machines that reset every session, so you need to install some system and Python packages each time you start a new session to run this project successfully, especially to support Gym’s Box2D environments and rendering.
 
 Before running training or evaluation in Colab, execute this cell at the top of your notebook:
@@ -48,6 +53,7 @@ Before running training or evaluation in Colab, execute this cell at the top of 
 After running the above, you may need to **restart your Colab runtime** to apply changes.
 
 ---
+
 
 ## Usage
 
