@@ -44,7 +44,7 @@ If you wish to run locally, please carefully follow official installation instru
 
 Google Colab runs on virtual machines that reset every session, so you need to install some system and Python packages each time you start a new session to run this project successfully, especially to support Gym’s Box2D environments and rendering.
 
-
+<a href="https://colab.research.google.com/github/NudelMaster/lunar-lander-rl/blob/main/notebooks/colab_run.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a>
 
 Before running training or evaluation in Colab, execute this cell at the top of your notebook:
 
