@@ -39,13 +39,6 @@ pip install -r requirements.txt
 This repository is designed to be run primarily from **Google Colab**.  
 Running the setup and installation commands on your local machine may cause conflicts or mess up your system, especially due to system-level package installations required for Box2D support.  
 If you wish to run locally, please carefully follow official installation instructions for Gym and its dependencies.
-<a href="https://gymnasium.farama.org/" target="_blank">
-  <img 
-    src="https://raw.githubusercontent.com/Farama-Foundation/Gymnasium/main/static/img/gymnasium_black.svg" 
-    alt="Gymnasium Logo" 
-    width="10" 
-  />
-</a>
 
 Google Colab runs on virtual machines that reset every session, so you need to install some system and Python packages each time you start a new session to run this project successfully, especially to support Gym’s Box2D environments and rendering.
 
@@ -81,7 +74,7 @@ Install required Python packages with:
 
 For Gym’s Box2D support, you might need additional system packages depending on your OS. See the official Gym documentation for details.
 
-<a href="https://gymnasium.farama.org/introduction/gym_compatibility/" target="_parent"><img src="https://gymnasium.farama.org/_static/img/gymnasium_black.svg" alt="Documentation"/></a>
+<a href="https://gymnasium.farama.org/introduction/gym_compatibility/" target="_parent"><img src="https://gymnasium.farama.org/_static/img/gymnasium_black.svg" width = "20" alt="Documentation"/></a>
 
 
 #### Google Colab
