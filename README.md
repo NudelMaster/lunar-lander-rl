@@ -74,6 +74,9 @@ Install required Python packages with:
 
 For Gym’s Box2D support, you might need additional system packages depending on your OS. See the official Gym documentation for details.
 
+<a href="https://gymnasium.farama.org/introduction/gym_compatibility/" target="_parent"><img src="	https://gymnasium.farama.org/_static/img/gymnasium_white.svg" alt="Dark Logo"/></a>
+
+
 #### Google Colab
 
 Run the setup cell from the **Additional Notes for Google Colab Users** section above before running scripts.
