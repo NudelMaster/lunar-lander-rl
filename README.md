@@ -1,4 +1,4 @@
-# LunarLander Reinforcement Learning Agent
+# Lunar Lander Reinforcement Learning Agent
 
 This project implements an actor-critic reinforcement learning agent using PyTorch to solve the OpenAI Gym [LunarLander-v2](https://gym.openai.com/envs/LunarLander-v2/) environment. The agent learns to control the lunar lander to achieve stable landings with high rewards through policy gradient methods and value function approximation.
 
@@ -10,7 +10,8 @@ This project implements an actor-critic reinforcement learning agent using PyTor
 - Training loop with reward tracking, return standardization, and early stopping on average reward  
 - Supports GPU acceleration for faster training  
 - Final policy evaluation episode rendering with frame capture and GIF export  
-- Modular, easy-to-extend codebase for experimenting with other environments or RL algorithms
+- Modular, easy-to-extend codebase for experimenting with other environments or RL algorithms  
+- Resumable progress bar using `tqdm` (continues from previous episode count)  
 
 ---
 
@@ -18,13 +19,13 @@ This project implements an actor-critic reinforcement learning agent using PyTor
 
 This project depends on the following Python packages and system libraries:
 
-- `numpy`
-- `gym` (with Box2D support)
-- `matplotlib`
-- `pyvirtualdisplay`
-- `moviepy`
-- `torch` (PyTorch)
-- `tqdm`
+- `numpy`  
+- `gym` (with Box2D support)  
+- `matplotlib`  
+- `pyvirtualdisplay`  
+- `moviepy`  
+- `torch` (PyTorch)  
+- `tqdm`  
 
 ### Python package installation
 
@@ -33,6 +34,7 @@ Use the following command to install all necessary Python packages:
 ```bash
 pip install -r requirements.txt
 ```
+
 ## Additional Notes for Google Colab Users
 
 **⚠️ Warning:**  
@@ -61,7 +63,7 @@ After running the above, you may need to **restart your Colab runtime** to apply
 
 ### 1. Clone the Repository
 
-    git clone https://github.com/your_username/lunar-lander-rl.git
+    git clone https://github.com/NudelMaster/lunar-lander-rl.git
     cd lunar-lander-rl
 
 ### 2. Install Dependencies
