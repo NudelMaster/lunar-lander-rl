@@ -43,7 +43,7 @@ If you wish to run locally, please carefully follow official installation instru
   <img 
     src="https://raw.githubusercontent.com/Farama-Foundation/Gymnasium/main/static/img/gymnasium_black.svg" 
     alt="Gymnasium Logo" 
-    width="50" 
+    width="10" 
   />
 </a>
 
