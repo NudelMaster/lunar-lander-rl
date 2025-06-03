@@ -1,0 +1,10 @@
+numpy
+gym[box2d]
+matplotlib
+pyvirtualdisplay
+moviepy
+torch
+tqdm
+ufal.pybox2d
+pyglet
+PyOpenGL-accelerate
