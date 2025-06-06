@@ -2,6 +2,9 @@ import torch,gym, numpy as np, matplotlib.pyplot as plt
 from moviepy.editor import VideoClip
 from moviepy.video.io.bindings import mplfig_to_npimage
 from dual_net import DualNet
+import warnings
+warnings.filterwarnings("ignore", category=DeprecationWarning)
+
 from config import (
     ENV_NAME,
     ENV_STATE_DIM,
