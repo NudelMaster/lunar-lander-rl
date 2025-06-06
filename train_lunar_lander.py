@@ -58,7 +58,7 @@ def run_training(agent, num_iter=1500, score_to_solve=200, pbar=None):
 
         
         # Early stopping if we have at least 100 returns
-        if len(episode_rewards) == 100:
+        if len(episode_rewards) == 100 or start >= 100:
             avg_return = np.mean(episode_rewards)
             progress_bar.set_postfix_str(f"avg100={avg_return:.1f}")
             if avg_return >= score_to_solve:
@@ -91,3 +91,4 @@ def run_training(agent, num_iter=1500, score_to_solve=200, pbar=None):
         progress_bar.update(1)
 
     progress_bar.close()
+    return np.mean(episode_rewards)

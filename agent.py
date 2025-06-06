@@ -38,7 +38,7 @@ class Agent:
 
         # Track how many episodes we've trained so far
         self.episodes_trained = 0
-
+        self.avg_100 = float("-inf")  # Average of the last 100 episodes
         
         
 
@@ -46,13 +46,15 @@ class Agent:
         self,
         num_iter: int = NUM_ITER,
         score_to_solve: int = SCORE_TO_SOLVE,
-        resume: bool = True,
+        resume: bool = False,
         save_path: str = "lunar_lander_actor_critic.pth",
         learning_rate: float = LEARNING_RATE,
     ):
         if not resume or self.episodes_trained == 0:
             print("Starting fresh training...")
             self.reset()
+        else:
+            print(f"Continue training from previous state at episode {self.episodes_trained}...")
 
         # Override learning rate if requested
         if learning_rate is not None:
@@ -64,14 +66,18 @@ class Agent:
         pbar = tqdm(total=total_target, desc="Training", unit="ep")
         pbar.update(already_done)
         
-        run_training(
+        avg_100 = run_training(
             agent=self,
             num_iter=num_iter,
             score_to_solve=score_to_solve,
             pbar = pbar
         )
-        self.save_model(save_path)
-        
+        if resume and avg_100 > self.avg_100:
+            print(f"New average of last 100 episodes: {avg_100:.2f} (previous: {self.avg_100:.2f})")
+            self.avg_100 = avg_100
+            self.save_model(save_path)
+        else:
+            print(f"Average of last 100 episodes: {avg_100:.2f} (not saved, lower than previous: {self.avg_100:.2f})")
                      
     def save_model(self, path):
         ''' Save the model state to a file '''
@@ -103,7 +109,8 @@ class Agent:
         frames, score = evaluate(agent = self, greedy = greedy, score_to_solve=score_to_solve)
         if frames:
             print(f"Evaluation score: {score}")
-            return self.visualize_trajectory(frames)
+            animation = self.visualize_trajectory(frames)
+            animation.ipython_display(fps=50, loop=True, autoplay=True)
         else:
             print("Score below threshold, no frames to visualize.")
             return None
