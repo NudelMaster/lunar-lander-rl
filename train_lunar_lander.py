@@ -21,10 +21,13 @@ def run_training(agent, num_iter=1500, score_to_solve=200, pbar=None):
     # This progress_bar is useful to know how far along the training is
     start = agent.episodes_trained
     if pbar is None:
-        progress_bar = tqdm(range(start + num_iter), desc="Training", unit="ep")
+        progress_bar = tqdm.tqdm(
+            range(start + num_iter),
+            desc="Training",
+            unit="ep")
     else:
         progress_bar = pbar
-        
+
     for episode in progress_bar:
         optimizer.zero_grad()
         state = env.reset()
