@@ -109,8 +109,8 @@ class Agent:
         frames, score = evaluate(agent = self, greedy = greedy, score_to_solve=score_to_solve)
         if frames:
             print(f"Evaluation score: {score}")
-            animation = self.visualize_trajectory(frames)
-            animation.ipython_display(fps=50, loop=True, autoplay=True)
+            return self.visualize_trajectory(frames)
+            
         else:
             print("Score below threshold, no frames to visualize.")
             return None
@@ -124,7 +124,8 @@ class Agent:
             return mplfig_to_npimage(fig)
         plt.close()
         return VideoClip(make_frame, duration=duration)
-
+    def animate(self, animation):
+        animation.ipython_display(fps=50, loop=True, autoplay=True)
 
 
 
