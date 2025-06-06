@@ -32,7 +32,7 @@ class Agent:
         self.gamma = gamma
         self.action_dim = action_dim
         self.lr = lr
-
+        self.num_iter = num_iter
         # Initialize the actor-critic network
         self.net = DualNet(state_dim, action_dim).to(self.device)
 
@@ -64,7 +64,7 @@ class Agent:
         if learning_rate is not None:
             for param_group in self.optimizer.param_groups:
                 param_group["lr"] = learning_rate
-
+        max_episodes = self.num_iter if max_episodes is None else max_episodes
         # Build a single tqdm bar that spans from 0 → (already_done + max_episodes)
         already_done = self.episodes_trained
         total_target = already_done + num_iter
