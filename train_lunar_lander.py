@@ -20,15 +20,12 @@ def run_training(agent, num_iter=1500, score_to_solve=200, pbar=None):
     episode_rewards = deque(maxlen = 100)
     # This progress_bar is useful to know how far along the training is
     start = agent.episodes_trained
-    num_iter = num_iter + start
-
-    progress_bar = pbar
-    if progress_bar is None:
-        progress_bar = tqdm.tqdm(total=num_iter, desc="Training Progress")
+    if pbar is None:
+        progress_bar = tqdm(range(start + num_iter), desc="Training", unit="ep")
     else:
-        progress_bar.update(start)
-    
-    for _ in progress_bar:
+        progress_bar = pbar
+        
+    for episode in progress_bar:
         optimizer.zero_grad()
         state = env.reset()
         done = False
@@ -89,6 +86,5 @@ def run_training(agent, num_iter=1500, score_to_solve=200, pbar=None):
 
         optimizer.step()
 
-        progress_bar.update(1)
 
     progress_bar.close()
