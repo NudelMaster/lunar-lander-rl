@@ -4,7 +4,7 @@ from collections import deque
 
 
 
-def run_training(agent, num_iter=1500, score_to_solve=200, progress_bar=None):
+def run_training(agent, num_iter=1500, score_to_solve=200, pbar=None):
     # if using a gpu runtime DualNet().cuda() moves the policy to GPU
     # The optimizer will do the gradient updates for you
     # It needs the trainable parameters and a learning rate
@@ -22,7 +22,7 @@ def run_training(agent, num_iter=1500, score_to_solve=200, progress_bar=None):
     start = agent.episodes_trained
     num_iter = num_iter + start
 
-    progress_bar = agent.progress_bar
+    progress_bar = pbar
     if progress_bar is None:
         progress_bar = tqdm.tqdm(total=num_iter, desc="Training Progress")
     else:

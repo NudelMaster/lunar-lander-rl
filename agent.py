@@ -71,7 +71,7 @@ class Agent:
             agent=self,
             num_iter=num_iter,
             score_to_solve=score_to_solve,
-            progress_bar = pbar
+            pbar = pbar
         )
         self.save_model(save_path)
         
