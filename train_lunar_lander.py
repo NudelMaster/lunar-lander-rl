@@ -28,7 +28,7 @@ def run_training(agent, num_iter=1500, score_to_solve=200, pbar=None):
     else:
         progress_bar = pbar
 
-    for episode in progress_bar:
+    for episode in range(start, start + num_iter):
         optimizer.zero_grad()
         state = env.reset()
         done = False
@@ -88,6 +88,6 @@ def run_training(agent, num_iter=1500, score_to_solve=200, pbar=None):
         loss.backward()
 
         optimizer.step()
-
+        progress_bar.update(1)
 
     progress_bar.close()
