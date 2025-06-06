@@ -24,18 +24,15 @@ class Agent:
         state_dim=ENV_STATE_DIM,
         action_dim=ENV_ACTION_DIM,
         lr=LEARNING_RATE,
-        gamma=DISCOUNT_FACTOR,
-        num_iter=NUM_ITER
+        gamma=DISCOUNT_FACTOR
     ):
         self.device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
         self.env = gym.make(env_name)
         self.gamma = gamma
         self.action_dim = action_dim
         self.lr = lr
-        self.num_iter = num_iter
         # Initialize the actor-critic network
         self.net = DualNet(state_dim, action_dim).to(self.device)
-
         # Optimizer for the network
         self.optimizer = torch.optim.RMSprop(self.net.parameters(), lr=self.lr)
 
@@ -101,9 +98,9 @@ class Agent:
         print("Environment reset and training counter cleared.")
             
          
-    def evaluate(self, model_path: str, greedy: bool = True):
+    def evaluate(self, model_path: str, greedy: bool = True, score_to_solve: float = SCORE_TO_SOLVE):
         self.load_model(model_path)
-        frames, score = evaluate(agent = self, greedy = greedy)
+        frames, score = evaluate(agent = self, greedy = greedy, score_to_solve=score_to_solve)
         if frames:
             print(f"Evaluation score: {score}")
             return self.visualize_trajectory(frames)

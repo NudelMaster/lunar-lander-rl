@@ -1,13 +1,12 @@
 import torch
-def evaluate(agent, greedy: bool = True):
+def evaluate(agent, greedy: bool = True, score_to_solve: float = 200.0):
     # Run one episode greedily, render frames, save gif
 
 
     
     env = agent.env
     net = agent.net
-    device = agent.device
-    score_to_solve = agent.score_to_solve        
+    device = agent.device      
     state = env.reset()
     done = False
     total_reward = 0
