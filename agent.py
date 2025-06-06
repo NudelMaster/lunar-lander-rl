@@ -47,24 +47,20 @@ class Agent:
 
     def train(
         self,
-        max_episodes: int = NUM_ITER,
+        num_iter: int = NUM_ITER,
         score_to_solve: int = SCORE_TO_SOLVE,
         resume: bool = True,
         save_path: str = "lunar_lander_actor_critic.pth",
         learning_rate: float = LEARNING_RATE,
-        num_iter: int = NUM_ITER
-
     ):
         if not resume or self.episodes_trained == 0:
             print("Starting fresh training...")
             self.reset()
 
-        # override the learning rate if requested
         # Override learning rate if requested
         if learning_rate is not None:
             for param_group in self.optimizer.param_groups:
                 param_group["lr"] = learning_rate
-        max_episodes = self.num_iter if max_episodes is None else max_episodes
         # Build a single tqdm bar that spans from 0 → (already_done + max_episodes)
         already_done = self.episodes_trained
         total_target = already_done + num_iter
@@ -73,7 +69,7 @@ class Agent:
         
         run_training(
             agent=self,
-            max_episodes=max_episodes,
+            num_iter=num_iter,
             score_to_solve=score_to_solve,
             progress_bar = pbar
         )
