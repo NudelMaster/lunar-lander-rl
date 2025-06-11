@@ -1,6 +1,6 @@
-numpy
+numpy==1.23.5
 gym[box2d]
-matplotlib
+matplotlib==3.7.0
 pyvirtualdisplay
 moviepy
 torch
