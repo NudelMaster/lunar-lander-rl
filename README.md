@@ -35,7 +35,6 @@ Use the following command to install all necessary Python packages:
 pip install -r requirements.txt
 ```
 
-## Additional Notes for Google Colab Users
 
 **⚠️ Warning:**  
 This repository is designed to be run primarily from **Google Colab**.  
@@ -44,11 +43,7 @@ If you wish to run locally, please carefully follow official installation instru
 
 Google Colab runs on virtual machines that reset every session, so you need to install some system and Python packages each time you start a new session to run this project successfully, especially to support Gym’s Box2D environments and rendering.
 
-#### Google Colab
 
-Run the setup cell from the **Additional Notes for Google Colab Users** section above before running scripts.
-
----
 
 <a href="https://colab.research.google.com/github/NudelMaster/lunar-lander-rl/blob/main/notebooks/colab_run.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a>
 
