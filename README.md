@@ -57,9 +57,6 @@ For Gym’s Box2D support, you might need additional system packages depending o
 
 ### Lunar Lander Reinforcement Learning Videos
 
-**Before Training (Sample Video):**  
-<video src="videos/untrained_video.mp4" controls autoplay muted loop width="600"></video>
-
-**After Training (Trained Model Video):**  
-<video src="videos/trained_video.mp4" controls autoplay muted loop width="600"></video>
+- [Before Training (Sample Video)](videos/untrained_video.mp4)  
+- [After Training (Trained Model Video)](videos/trained_video.mp4)
 
