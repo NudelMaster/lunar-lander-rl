@@ -64,7 +64,7 @@ Before Training
 
 ---
 
-After Training
+After Training (1500 iterations with lr==1e-2)
 
 - ![After Training](videos/trained_video.gif)
 
