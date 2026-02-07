@@ -1,17 +1,29 @@
 # Lunar Lander Reinforcement Learning Agent
 
-This project implements an actor-critic reinforcement learning agent using PyTorch to solve the OpenAI Gym [LunarLander-v2](https://gym.openai.com/envs/LunarLander-v2/) environment. The agent learns to control the lunar lander to achieve stable landings with high rewards through policy gradient methods and value function approximation.
+An actor–critic reinforcement learning agent implemented in PyTorch to solve the LunarLander-v2 environment [LunarLander-v2](https://gym.openai.com/envs/LunarLander-v2/). 
+
+The agent learns stable landing policies through policy gradients and value function approximation.
+
+The project includes a full training pipeline, GPU support, performance tracking, and visual evaluation through rendered episodes.
+
+**Tech:** Python, PyTorch, OpenAI Gym, NumPy
 
 ---
 
-## Features
+## What I Implemented
+- Actor–critic neural network with shared features and separate policy/value heads
+- Training loop with reward tracking and return normalization
+- Early stopping based on average reward
+- GPU training support
+- Policy evaluation with rendering and GIF export
+- Modular structure for experimenting with other environments
 
-- Actor-Critic neural network architecture with separate policy (actor) and value (critic) heads  
-- Training loop with reward tracking, return standardization, and early stopping on average reward  
-- Supports GPU acceleration for faster training  
-- Final policy evaluation episode rendering with frame capture and GIF export  
-- Modular, easy-to-extend codebase for experimenting with other environments or RL algorithms  
-- Resumable progress bar using `tqdm` (continues from previous episode count)  
+---
+
+## Algorithm
+The agent uses an actor–critic architecture trained with policy gradients.  
+The actor outputs action probabilities, while the critic estimates the value function.  
+Training uses episodic returns, normalization, and early stopping based on average reward.
 
 ---
 
